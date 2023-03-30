@@ -1,23 +1,17 @@
 import React from 'react'
-import { View, Text, Image, StyleSheet, Button, TouchableOpacity, ImageBackground } from 'react-native'
+import { View, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient';
-import { useFonts } from 'expo-font';
+import TextStyled from './TextStyled';
 
 export default function Hero() {
-    let [fontsLoaded] = useFonts({
-        Bold: require('../assets/fonts/Montserrat-Bold.ttf'),
-        Regular: require('../assets/fonts/Montserrat-Regular.ttf'),
-        Medium: require('../assets/fonts/Montserrat-Medium.ttf'),
-    });
-    if (!fontsLoaded) {
-        return null;
-    }
+
+
 
     return (
 
         <View style={style.contain}>
             <LinearGradient
-                colors={['#4338CA','#000000']}
+                colors={['#4338CA', '#000000']}
                 start={{ x: 0, y: 0 }}
                 end={{ x: 1, y: 1 }}
                 style={{
@@ -30,18 +24,18 @@ export default function Hero() {
                     style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', top: 252 }}
                 >
                     <View style={style.whitecontainer}>
-                        <Text style={style.h1}>Live the emotion of manga</Text>
-                        <Text style={style.p}>Find the perfect manga for you</Text>
+                        <TextStyled props={style.h1} content={'Live the emotion of manga'} />
+                        <TextStyled props={style.p} content={'Find the perfect manga for you'} />
                     </View>
                     <TouchableOpacity >
-                        <LinearGradient
+                        <LinearGradient 
                             colors={['#4338CA', '#120F35', '#000000']}
                             start={{ x: 0.5, y: 0 }}
                             end={{ x: 0.5, y: 1 }}
                             locations={[0.2, 1, 1]}
                             style={style.gradientBtn}
                         >
-                            <Text style={{ color: '#fff', fontSize: 20, fontFamily: 'Medium' }}>Explore</Text>
+                            <TextStyled props={{ color: '#fff', fontSize: 20, fontFamily: 'Medium' }} content={'Explore'} />
                         </LinearGradient>
                     </TouchableOpacity>
                 </ImageBackground>
@@ -49,6 +43,7 @@ export default function Hero() {
         </View>
     )
 }
+
 
 const style = StyleSheet.create({
     contain: {
@@ -79,9 +74,9 @@ const style = StyleSheet.create({
     },
     h1: {
         fontFamily: 'Bold',
-        fontSize: 34,
+        fontSize: 30,
+        color: '#17115F',
         textAlign: 'center',
-        color: '#4338CA',
         textShadowRadius: 20,
         shadowOpacity: 0
     },
