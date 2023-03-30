@@ -35,7 +35,7 @@ export default function Hero() {
                             locations={[0.2, 1, 1]}
                             style={style.gradientBtn}
                         >
-                            <TextStyled props={{ color: '#fff', fontSize: 20, fontFamily: 'Medium' }} content={'Explore'} />
+                            <TextStyled props={{ color: '#fff', fontSize: 20, fontFamily: 'Regular' }} content={'Explore'} />
                         </LinearGradient>
                     </TouchableOpacity>
                 </ImageBackground>
@@ -50,8 +50,8 @@ const style = StyleSheet.create({
         width: '100%',
         height: '100%',
         display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        alignItems: "flex-start",
+        justifyContent: "flex-start",
     },
     whitecontainer: {
         marginTop: 120,
@@ -73,8 +73,8 @@ const style = StyleSheet.create({
         borderRadius: 10
     },
     h1: {
-        fontFamily: 'Bold',
-        fontSize: 30,
+        fontFamily: 'ExtraBold',
+        fontSize: 36,
         color: '#17115F',
         textAlign: 'center',
         textShadowRadius: 20,
