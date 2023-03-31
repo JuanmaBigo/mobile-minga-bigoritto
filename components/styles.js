@@ -9,7 +9,6 @@ const stylesHero = StyleSheet.create({
         justifyContent: "flex-start",
     },
     whitecontainer: {
-<<<<<<< HEAD
         position: 'absolute',
         marginTop: -190,
         width: '95%',
@@ -32,7 +31,6 @@ const stylesHero = StyleSheet.create({
         color: '#EBEBEB'
     },
     gradientBtn: {
-        marginTop: 180,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -40,63 +38,14 @@ const stylesHero = StyleSheet.create({
         width: 365,
         height: 48,
         borderRadius: 10,
-=======
-        marginTop: 120,
-        width: '95%',
-        backgroundColor: 'white',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        paddingVertical: 15,
-        paddingHorizontal: 10,
-        marginVertical: 25,
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 0,
-            height: 4
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 4,
-        borderRadius: 10
-    },
-    h1: {
-        fontFamily: 'ExtraBold',
-        fontSize: 36,
-        color: '#17115F',
-        textAlign: 'center',
-        textShadowRadius: 20,
-        shadowOpacity: 0
-    },
-    p: {
-        fontFamily: 'Regular',
-        fontSize: 20,
-        color: '#17115F'
-    },
-    gradientBtn: {
-        width: 363,
-        height: 59,
-        padding: 15,
-        alignItems: 'center',
-        borderRadius: 50,
-        flexDirection: 'row',
-        justifyContent: 'center',
-        borderWidth: 1,
-        borderColor: 'rgba(255, 255, 255, 0.18)',
->>>>>>> 59e601ffae7a5bbe2e3e573286ddd99335572172
         shadowColor: '#000',
         shadowOffset: {
             width: 0,
             height: 4,
         },
-<<<<<<< HEAD
         shadowOpacity: 0.25,
         shadowRadius: 4,
         elevation: 5,
-=======
-        shadowOpacity: 0.1,
-        shadowRadius: 4,
-        elevation: 4,
->>>>>>> 59e601ffae7a5bbe2e3e573286ddd99335572172
     }
 });
 

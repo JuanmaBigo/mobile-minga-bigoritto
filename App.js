@@ -1,16 +1,18 @@
-import Index from './components/Index.jsx';
+import 'react-native-gesture-handler';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { store } from './store/store'
 import { Provider } from 'react-redux';
-import TextStyled from './components/TextStyled.jsx';
-
+import AppStack from './navigation/AppStack.jsx';
+import AuthStack from './navigation/AuthStack.jsx';
 
 
 export default function App() {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        <Index />
+        {/* <AppStack /> */}
+        <AuthStack/>
       </NavigationContainer>
     </Provider>
   );
