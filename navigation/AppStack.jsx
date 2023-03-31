@@ -10,7 +10,7 @@ const Drawer = createDrawerNavigator();
 
 export default function AppStack() {
     return (
-        <Drawer.Navigator screenOptions={{headerShown: false}}>
+        <Drawer.Navigator screenOptions={{headerShown: false, drawerLabelStyle:{color: 'white'}}}>
             <Drawer.Screen name="Home" component={HomeLoggedIn} />
             <Drawer.Screen name="Mangas" component={Mangas} />
             <Drawer.Screen name="Logout" component={Logout} />
