@@ -9,6 +9,38 @@ const stylesHero = StyleSheet.create({
         justifyContent: "flex-start",
     },
     whitecontainer: {
+<<<<<<< HEAD
+        position: 'absolute',
+        marginTop: -190,
+        width: '95%',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+    },
+    h1: {
+        fontFamily: 'SemiBold',
+        fontSize: 32, 
+        color: 'white',
+        textAlign: 'center',
+        textShadowRadius: 20,
+        shadowOpacity: 0,
+        marginBottom: 20,
+    },
+    p: {
+        fontFamily: 'Regular',
+        fontSize: 18,
+        color: '#EBEBEB'
+    },
+    gradientBtn: {
+        marginTop: 180,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 4,
+        width: 365,
+        height: 48,
+        borderRadius: 10,
+=======
         marginTop: 120,
         width: '95%',
         backgroundColor: 'white',
@@ -50,14 +82,21 @@ const stylesHero = StyleSheet.create({
         justifyContent: 'center',
         borderWidth: 1,
         borderColor: 'rgba(255, 255, 255, 0.18)',
+>>>>>>> 59e601ffae7a5bbe2e3e573286ddd99335572172
         shadowColor: '#000',
         shadowOffset: {
             width: 0,
             height: 4,
         },
+<<<<<<< HEAD
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+        elevation: 5,
+=======
         shadowOpacity: 0.1,
         shadowRadius: 4,
         elevation: 4,
+>>>>>>> 59e601ffae7a5bbe2e3e573286ddd99335572172
     }
 });
 
