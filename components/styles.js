@@ -9,55 +9,44 @@ const stylesHero = StyleSheet.create({
         justifyContent: "flex-start",
     },
     whitecontainer: {
-        marginTop: 120,
+        position: 'absolute',
+        marginTop: -190,
         width: '95%',
-        backgroundColor: 'white',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        paddingVertical: 15,
-        paddingHorizontal: 10,
-        marginVertical: 25,
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 0,
-            height: 4
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 4,
-        borderRadius: 10
     },
     h1: {
-        fontFamily: 'ExtraBold',
-        fontSize: 36,
-        color: '#17115F',
+        fontFamily: 'SemiBold',
+        fontSize: 32, 
+        color: 'white',
         textAlign: 'center',
         textShadowRadius: 20,
-        shadowOpacity: 0
+        shadowOpacity: 0,
+        marginBottom: 20,
     },
     p: {
         fontFamily: 'Regular',
-        fontSize: 20,
-        color: '#17115F'
+        fontSize: 18,
+        color: '#EBEBEB'
     },
     gradientBtn: {
-        width: 363,
-        height: 59,
-        padding: 15,
+        marginTop: 180,
+        display: 'flex',
         alignItems: 'center',
-        borderRadius: 50,
-        flexDirection: 'row',
         justifyContent: 'center',
-        borderWidth: 1,
-        borderColor: 'rgba(255, 255, 255, 0.18)',
+        borderRadius: 4,
+        width: 365,
+        height: 48,
+        borderRadius: 10,
         shadowColor: '#000',
         shadowOffset: {
             width: 0,
             height: 4,
         },
-        shadowOpacity: 0.1,
+        shadowOpacity: 0.25,
         shadowRadius: 4,
-        elevation: 4,
+        elevation: 5,
     }
 });
 
