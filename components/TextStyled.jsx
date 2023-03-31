@@ -23,11 +23,8 @@ export default function TextStyled({ props, content }) {
     props.opacity = props.opacity || 1;
     props.marginBottom = props.marginBottom || 0;
     props.marginTop = props.marginTop || 0;
-<<<<<<< HEAD
     props.width = props.width || 'auto';
     props.height = props.height || 'auto';
-=======
->>>>>>> 59e601ffae7a5bbe2e3e573286ddd99335572172
 
     const styles = StyleSheet.create({
         text: {
