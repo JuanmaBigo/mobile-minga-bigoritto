@@ -31,7 +31,6 @@ const stylesHero = StyleSheet.create({
         color: '#EBEBEB'
     },
     gradientBtn: {
-        marginTop: 180,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
