@@ -1,14 +1,32 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { View, TouchableOpacity, ImageBackground, Image } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient';
 import TextStyled from './TextStyled';
-
+import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from './styles';
 const { stylesHero } = styles;
 
 
-export default function Hero() {
+export default function Hero() {    
     let styles = stylesHero;
+    const navigation = useNavigation()
+
+    const [token, setToken] = useState(null);
+    useEffect(() => {
+        AsyncStorage.getItem('token')
+            .then(res => {
+                setToken(res);
+            })
+    }, []);
+
+    function handleNavigate() {
+        if (token){
+            navigation.navigate('Mangas')
+        }else{
+            navigation.navigate('Login')
+        }
+    }
 
     return (
         <View style={styles.contain}>
@@ -19,7 +37,7 @@ export default function Hero() {
                         <TextStyled props={styles.h1} content={'LIVE THE EMOTION OF MANGA'} />
                         <TextStyled props={styles.p} content={'Find the perfect manga for you'} />
                     </View>
-                    <TouchableOpacity style={{ width: 365, height: 48, marginTop: 180 }}>
+                    <TouchableOpacity onPress={handleNavigate} style={{ width: 365, height: 48, marginTop: 180 }} >
                         <LinearGradient colors={['#4338CA', '#120F35']} locations={[0.2, 1]} start={[0, 0]} end={[1, 1]} style={styles.gradientBtn}>
                             <TextStyled props={{ color: '#fff', fontSize: 15, fontFamily: 'SemiBold' }} content={'EXPLORE'} />
                         </LinearGradient>

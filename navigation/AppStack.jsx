@@ -3,9 +3,8 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import CustomDrawer from '../components/CustomDrawer';
 
-import HomeLoggedIn from '../screens/HomeLoggedIn';
+import Home from '../screens/Home';
 import Mangas from '../screens/Mangas';
-import Logout from '../screens/Logout';
 
 import { useFonts } from 'expo-font';
 
@@ -31,9 +30,8 @@ export default function AppStack() {
                 fontFamily: 'Medium',
             },
         }}>
-            <Drawer.Screen name="Home" component={HomeLoggedIn} />
+            <Drawer.Screen name="Home" component={Home} />
             <Drawer.Screen name="Mangas" component={Mangas} />
-            <Drawer.Screen name="Logout" component={Logout} />
         </Drawer.Navigator>
     )
 }
