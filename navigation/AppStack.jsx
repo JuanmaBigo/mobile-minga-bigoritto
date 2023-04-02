@@ -1,13 +1,11 @@
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-
 import CustomDrawer from '../components/CustomDrawer';
 
 import Home from '../screens/Home';
 import Mangas from '../screens/Mangas';
 
 import { useFonts } from 'expo-font';
-
 
 const Drawer = createDrawerNavigator();
 
