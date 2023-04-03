@@ -30,6 +30,7 @@ export default function AppStack() {
                 drawerLabelStyle: {
                     fontFamily: 'Medium',
                 },
+                swipeEdgeWidth: 70,
             }}>
             <Drawer.Screen name="Home" component={Home} />
             <Drawer.Screen name="Login" component={Login} />

@@ -1,14 +1,20 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import apiUrl from "../../configHost";
 
+import apiUrl from "../../configHost";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import {REACT_APP_URL} from '@env'
 
 const read_mangas = createAsyncThunk(
     'read_mangas',
-    async ({ inputText, inputCheck, inputPage }) => {
-        let token = localStorage.getItem('token')
+    async ({ inputText, inputPage }) => {
+        
+        AsyncStorage.getItem('token')
+            .then(res => {
+                token = res;
+            })
         let headers = { headers: { 'Authorization': `Bearer ${token}` } }
-        let url = apiUrl + `mangas?page=${inputPage}&title=${inputText.trim()}&category_id=${inputCheck.join()}`
+        let url = process.env.REACT_APP_URL + `mangas?page=${inputPage}&title=${inputText.trim()}`
         try {
             let response = await axios.get(url, headers)
             return {

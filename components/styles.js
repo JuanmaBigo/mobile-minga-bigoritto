@@ -18,7 +18,7 @@ const stylesHero = StyleSheet.create({
     },
     h1: {
         fontFamily: 'SemiBold',
-        fontSize: 32, 
+        fontSize: 32,
         color: 'white',
         textAlign: 'center',
         textShadowRadius: 20,
@@ -116,6 +116,57 @@ const stylesFormLogin = StyleSheet.create({
     }
 });
 
-const styles = { stylesFormLogin, stylesHero }
+const mangasFull = StyleSheet.create({
+    h1: {
+        fontFamily: 'SemiBold',
+        fontSize: 32,
+        color: 'white',
+        textAlign: 'center',
+        textShadowRadius: 20,
+        shadowOpacity: 0,
+        marginBottom: 67,
+        marginTop: 38,
+    },
+    searchContainer: {
+        width: '95%',
+        height: 62,
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingVertical: 10,
+        paddingHorizontal: 30,
+        backgroundColor: '#fff',
+        borderRadius: 80,
+        gap: 10,
+    },
+    inputSearch: {
+        borderColor: '#fff',
+        fontSize: 22,
+        opacity: 0.5
+    },
+    listContainer:{
+        marginTop: 37,
+        paddingBottom: 20,
+        flex: 1,
+        width: '100%',
+        minHeight: 550,
+        borderTopLeftRadius: 70,
+        borderTopRightRadius: 70,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+    },
+    listTitle:{
+        fontSize: 24,
+        fontFamily: 'Medium',
+        color: '#fff',
+        alignSelf: 'flex-start',
+        marginTop: 45,
+        textShadowRadius: 20,
+        shadowOpacity: 0,
+    }
+});
+
+const styles = { stylesFormLogin, stylesHero, mangasFull }
 
 export default styles;

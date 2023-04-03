@@ -9,6 +9,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import drawerActions from '../store/Drawer/actions.js';
+import {REACT_APP_URL} from '@env'
 const { reloadDrawer } = drawerActions
 
 
@@ -33,7 +34,7 @@ const CustomDrawer = (props) => {
 
     async function handleSignOut() {
         let headers = { headers: { 'Authorization': `Bearer ${token}` } }
-        let url = 'https://minga-red.onrender.com/api/' + 'auth/signout'
+        let url = REACT_APP_URL + 'auth/signout'
         try {
             await axios.post(url, null, headers)
                 .then(res => {
