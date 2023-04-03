@@ -4,7 +4,6 @@ import AppStack from './AppStack.jsx';
 import AuthStack from './AuthStack.jsx';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
-// import { useFocusEffect } from "@react-navigation/native";
 import { useSelector } from 'react-redux';
 
 

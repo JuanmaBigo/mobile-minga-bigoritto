@@ -7,7 +7,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useDispatch, useSelector } from 'react-redux';
 import drawerActions from '../store/Drawer/actions.js';
 import { useNavigation } from '@react-navigation/native';
+import {REACT_APP_URL} from '@env'
 const { reloadDrawer } = drawerActions
+
 
 import styles from './styles.js';
 const { stylesFormLogin } = styles;
@@ -28,8 +30,7 @@ export default function App() {
             password: password
         };
         console.log(data);
-        let url = 'https://minga-red.onrender.com/api/' + 'auth/signin'
-
+        let url = REACT_APP_URL + 'auth/signin'
         try {
             await axios.post(url, data)
                 .then(res => {

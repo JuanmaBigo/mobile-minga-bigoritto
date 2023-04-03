@@ -23,8 +23,12 @@ export default function TextStyled({ props, content }) {
     props.opacity = props.opacity || 1;
     props.marginBottom = props.marginBottom || 0;
     props.marginTop = props.marginTop || 0;
+    props.marginLeft = props.marginLeft || 0;
+    props.marginRight = props.marginRight || 0;
     props.width = props.width || 'auto';
     props.height = props.height || 'auto';
+    props.alignSelf = props.alignSelf || 'auto';
+    props.elevation = props.elevation || 0;
 
     const styles = StyleSheet.create({
         text: {
@@ -37,6 +41,12 @@ export default function TextStyled({ props, content }) {
             opacity: props.opacity,
             marginBottom: props.marginBottom,
             marginTop: props.marginTop,
+            alignSelf: props.alignSelf,
+            marginLeft: props.marginLeft,
+            marginRight: props.marginRight,
+            width: props.width,
+            height: props.height,
+            elevation: props.elevation,
         },
     });
 
