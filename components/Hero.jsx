@@ -37,7 +37,7 @@ export default function Hero() {
                         <TextStyled props={styles.h1} content={'LIVE THE EMOTION OF MANGA'} />
                         <TextStyled props={styles.p} content={'Find the perfect manga for you'} />
                     </View>
-                    <TouchableOpacity activeOpacity={0.8} onPress={handleNavigate} style={{ width: 365, height: 48, marginTop: 180 }} >
+                    <TouchableOpacity activeOpacity={0.8} onPress={handleNavigate} style={{ width: 365, height: 48, marginTop: 180, elevation: 4 }} >
                         <LinearGradient colors={['#4338CA', '#120F35']} locations={[0.2, 1]} start={[0, 0]} end={[1, 1]} style={styles.gradientBtn}>
                             <TextStyled props={{ color: '#fff', fontSize: 15, fontFamily: 'SemiBold' }} content={'EXPLORE'} />
                         </LinearGradient>

@@ -29,6 +29,7 @@ export default function TextStyled({ props, content }) {
     props.height = props.height || 'auto';
     props.alignSelf = props.alignSelf || 'auto';
     props.elevation = props.elevation || 0;
+    props.lineHeight = props.lineHeight || null;
 
     const styles = StyleSheet.create({
         text: {
@@ -48,6 +49,7 @@ export default function TextStyled({ props, content }) {
             width: props.width,
             height: props.height,
             elevation: props.elevation,
+            lineHeight: props.lineHeight,
         },
     });
 

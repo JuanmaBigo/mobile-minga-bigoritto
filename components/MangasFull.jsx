@@ -33,7 +33,6 @@ export default function MangasFull() {
     )
     let mangas = useSelector(store => store.mangas.mangas)
     let defaultText = useSelector(store => store.text.text)
-    
 
     function prevPage() {
         if (page !== 1) {

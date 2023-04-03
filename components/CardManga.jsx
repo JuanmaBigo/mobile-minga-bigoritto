@@ -27,7 +27,7 @@ export default function CardManga({title, category, photo, id, navigation}) {
         navigation.navigate('MangaDetails', { id: id })
     }
     return (
-        <TouchableOpacity activeOpacity={0.7} onPress={handleNavigate} style={{ width: '100%', height: 144, gap: 10, backgroundColor: 'white', borderRadius: 10, alignItems: 'center', display: 'flex', flexDirection: 'row',textShadowRadius: 20, shadowOpacity: 0, }}>
+        <TouchableOpacity activeOpacity={0.7} onPress={handleNavigate} style={{ width: '100%', height: 144, gap: 10, backgroundColor: 'white', borderRadius: 10, alignItems: 'center', display: 'flex', flexDirection: 'row', elevation: 4 }}>
             <View style={{ height: 95, width: 7, backgroundColor: catColor }} />
 
             <View style={{ width: 140, height: 95, display: 'flex', flexDirection: 'column', justifyContent: 'center', }}>

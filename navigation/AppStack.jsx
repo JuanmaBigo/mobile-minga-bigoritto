@@ -15,8 +15,8 @@ const Stack = createStackNavigator();
 
 function DetailsStack() {
     return (
-        <Stack.Navigator initialRouteName="Mangas">
-            <Stack.Screen name="Mangas" component={Mangas} options={{ headerShown: false }}/>
+        <Stack.Navigator >
+            <Stack.Screen name="ListMangas" component={Mangas} options={{ headerShown: false }}/>
             <Stack.Screen name="MangaDetails" component={MangaDetails} options={{ headerShown: false }}/>
         </Stack.Navigator>
     );

@@ -24,13 +24,13 @@ export default function MangaDetailsFull({ id }) {
 
 
     return (
-        <ScrollView>
-            <LinearGradient ient colors={['#4338CA', '#000000']} end={{ x: 1.5, y: 1.4 }} start={{ x: -0.2, y: 0.1 }} style={{ flex: 1, width: '100%', height: '100%', alignItems: 'center' }}>
+        <ScrollView style={{ flex: 1 }}>
+            <LinearGradient colors={['#4338CA', '#000000']} end={{ x: 1.5, y: 1.4 }} start={{ x: -0.2, y: 0.1 }} style={{ flex: 1, width: '100%', height: '100%', alignItems: 'center' }}>
                 <Image source={require('../assets/Logo.png')} style={{ width: 69, height: 35, alignSelf: 'flex-end', marginTop: 70, marginRight: 26 }} />
-                <View style={{display: 'flex', width: '95%', flexDirection: 'column'}}>
+                <View style={{display: 'flex', width: '92%', flexDirection: 'column'}}>
                     <DetailsMain />
                     <RatingStats/>
-                    <DescriptionAndChapters/>
+                    <DescriptionAndChapters id={id}/>
                 </View>
             </LinearGradient>
         </ScrollView>

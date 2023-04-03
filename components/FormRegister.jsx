@@ -94,7 +94,7 @@ export default function App() {
                 <TextInput style={styles.input} placeholder="........" value={password} onChangeText={setPassword} secureTextEntry />
             </View>
 
-            <TouchableOpacity style={styles.button} onPress={handleRegister}>
+            <TouchableOpacity activeOpacity={0.8} style={styles.button} onPress={handleRegister}>
                 <LinearGradient colors={['#4338CA', '#120F35']} locations={[0.2, 1]} start={[0, 0]} end={[1, 1]} style={styles.gradientBtn2}>
                     <TextStyled props={styles.buttonText} content={'Register'} />
                 </LinearGradient>

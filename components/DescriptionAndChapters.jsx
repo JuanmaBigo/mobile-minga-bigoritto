@@ -1,16 +1,15 @@
 import React, { useState, useRef } from 'react';
 import { View, Text, Switch, StyleSheet } from 'react-native';
-import TextStyled from './TextStyled';
 import { useFonts } from 'expo-font';
+import Description from './Description'
+import Chapters from './Chapters'
 
 
-const DescriptionAndChapters = () => {
-    const [isChecked, setIsChecked] = useState(false);
-    const inputRef = useRef();
+const DescriptionAndChapters = ({id}) => {
+    const [isChecked, setIsChecked] = useState(true);
 
     const handleChange = (value) => {
         setIsChecked(value);
-        console.log(value)
     }
 
     let [fontsLoaded] = useFonts({
@@ -22,20 +21,22 @@ const DescriptionAndChapters = () => {
 
 
     return (
-        <View style={styles.container}>
-            <View style={styles.btnContainer}>
-                <Text style={[styles.btnText, isChecked ? styles.btnSelected : null]}>Manga</Text>
-                <Switch
-                    style={styles.inputDetails}
-                    ref={inputRef}
-                    trackColor={{ false: "#EBEBEB", true: "#EBEBEB" }}
-                    thumbColor={isChecked ? "red" : "red"}
-                    onValueChange={handleChange}
-                    value={isChecked}
-                />
-                <Text style={[styles.btnText, !isChecked ? styles.btnSelected : null]}>Chapters</Text>
+        <View style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <View style={styles.container}>
+                <View style={styles.btnContainer}>
+                    <Text style={[styles.btnText, isChecked ? styles.btnSelected : null]}>Description</Text>
+                    <Switch
+                        style={styles.inputDetails}
+                        trackColor={{ false: "#EBEBEB", true: "#EBEBEB" }}
+                        onValueChange={handleChange}
+                        value={isChecked}
+                    />
+                    <Text style={[styles.btnText, !isChecked ? styles.btnSelected : null]}>Chapters</Text>
+                </View>
             </View>
+            {isChecked ? <Description /> : <Chapters id={id}/>}
         </View>
+
     );
 }
 
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
     },
     btnText: {
         width: 150,
-        display: 'flex', 
+        display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         height: 35,
