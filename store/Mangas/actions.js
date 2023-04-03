@@ -8,12 +8,11 @@ import {REACT_APP_URL} from '@env'
 const read_mangas = createAsyncThunk(
     'read_mangas',
     async ({ inputText, inputPage }) => {
-
+        
         AsyncStorage.getItem('token')
             .then(res => {
                 token = res;
             })
-
         let headers = { headers: { 'Authorization': `Bearer ${token}` } }
         let url = process.env.REACT_APP_URL + `mangas?page=${inputPage}&title=${inputText.trim()}`
         try {
