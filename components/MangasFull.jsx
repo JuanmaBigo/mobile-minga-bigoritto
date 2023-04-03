@@ -20,7 +20,6 @@ const { mangasFull } = styles;
 
 export default function MangasFull() {
     let styles = mangasFull;
-    const [reload, setReload] = useState(false)
     const dispatch = useDispatch()
     const [page, setPage] = useState(1);
     const [searchText, setSearchText] = useState('');
@@ -30,11 +29,10 @@ export default function MangasFull() {
         () => {
             dispatch(read_mangas({ inputText: searchText, inputPage: page }))
         },
-        [page, reload, searchText]
+        [page, searchText]
     )
     let mangas = useSelector(store => store.mangas.mangas)
     let defaultText = useSelector(store => store.text.text)
-    
 
     function prevPage() {
         if (page !== 1) {
@@ -73,7 +71,7 @@ export default function MangasFull() {
                         <View style={{ display: 'flex', flexDirection: 'column', width: '100%', gap: 21, marginTop: 29 }}>
                             {mangas.length ? (mangas.map((manga) => (
                                 <CardManga key={manga._id} title={manga.title} category={manga.category_id} photo={manga.cover_photo} id={manga._id} navigation={navigation}/>
-                            ))) : null}
+                            ))) : <TextStyled props={{fontSize: 15, color: '#fff', fontFamily: "Medium"}} content={'No results for your search'} />}
                         </View>
 
                         {searchText === ''? 

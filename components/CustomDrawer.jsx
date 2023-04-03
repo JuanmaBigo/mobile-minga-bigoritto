@@ -9,6 +9,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import drawerActions from '../store/Drawer/actions.js';
+import Spinner from 'react-native-loading-spinner-overlay';
+
+
 import {REACT_APP_URL} from '@env'
 const { reloadDrawer } = drawerActions
 
@@ -16,6 +19,7 @@ const { reloadDrawer } = drawerActions
 const CustomDrawer = (props) => {
     const [token, setToken] = useState(null);
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(false);
     const dispatch = useDispatch()
     let state = useSelector(store => store.drawerReducer.state)
 
@@ -33,6 +37,7 @@ const CustomDrawer = (props) => {
 
 
     async function handleSignOut() {
+        setLoading(true)
         let headers = { headers: { 'Authorization': `Bearer ${token}` } }
         let url = REACT_APP_URL + 'auth/signout'
         try {
@@ -45,10 +50,10 @@ const CustomDrawer = (props) => {
                         photo: ''
                     }))
                 })
-            dispatch(reloadDrawer({ state: !state }))
-            console.log('The session was closed successfully!')
+                setLoading(false)
+                dispatch(reloadDrawer({ state: !state }))
         } catch (error) {
-            console.log("You're already signed out or not signed in")
+            console.log(error)
         }
     }
 
@@ -71,6 +76,7 @@ const CustomDrawer = (props) => {
                     <Ionicons name="log-out-outline" size={30} color="#fff" /><TextStyled content={'Sign Out'} props={{ color: '#fff', fontSize: 15, fontFamily: 'Medium', marginRight: 15 }} />
                 </TouchableOpacity>
             </View> : ''}
+            <Spinner visible={loading} />
         </LinearGradient>
     )
 }
