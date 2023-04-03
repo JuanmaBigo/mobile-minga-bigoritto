@@ -7,6 +7,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import drawerActions from '../store/Drawer/actions.js';
 import { useNavigation } from '@react-navigation/native';
 import {REACT_APP_URL} from '@env'
+import Spinner from 'react-native-loading-spinner-overlay';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
 const { reloadDrawer } = drawerActions
 
 import styles from './styles.js';
@@ -19,12 +22,17 @@ export default function App() {
     const [email, setEmail] = useState('');
     const [photo, setPhoto] = useState('');
     const [password, setPassword] = useState('');
+    const [loading, setLoading] = useState(false);
+    const [alert, setAlert] = useState(false);
+    const [alertMessage, setAlertMessage] = useState('');
+
     const navigation = useNavigation()
     const dispatch = useDispatch()
 
     let state = useSelector(store => store.drawerReducer.state)
 
     async function handleRegister() {
+        setLoading(true)
         let data = {
             name: name,
             mail: email,
@@ -37,15 +45,23 @@ export default function App() {
         try {
             await axios.post(url, data)
             dispatch(reloadDrawer({ state: !state }))
-            console.log("User created successfully")
-            console.log("Check your email to verify your account")
+            setAlertMessage('User created successfully, please check your email to verify your account')
             dispatch(reloadDrawer({ state: !state }))
+            setLoading(false)
+            setAlert(true)
+
         } catch (error) {
+            let message = ''
+            setAlertMessage('')
             if (typeof error.response.data.message === 'string') {
-                console.log(error.response.data.message)
+                message = error.response.data.message
             } else {
-                error.response.data.message.forEach(err => console.log(err))
+                error.response.data.message.forEach(err => message = err)
             }
+            setAlertMessage(message)
+
+            setLoading(false)
+            setAlert(true)
         }
     };
 
@@ -90,6 +106,16 @@ export default function App() {
                     <TextStyled props={{ color: '#4338CA', fontSize: 12, fontFamily: 'Bold' }} content={' Log in'} />
                 </TouchableOpacity>
             </View>
+
+            {alert ?
+                <View style={{  display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: 10, padding: 20, paddingBottom:30, backgroundColor: '#4338CA', position: 'absolute', bottom: 400 }}>
+                    <TouchableOpacity style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: 50, alignSelf: 'flex-end', backgroundColor: 'white',  marginBottom: 20, width: 30, height: 30}} onPress={() => setAlert(false)}>
+                        <Ionicons name="close-outline" size={20} color="#404040" />
+                    </TouchableOpacity>
+                        <TextStyled props={{ color: '#fff', fontSize: 17, fontFamily: 'Regular' }} content={alertMessage} />
+                </View> : null}
+
+            <Spinner visible={loading} />
         </View>
     );
 }
