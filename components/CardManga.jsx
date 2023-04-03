@@ -10,9 +10,6 @@ export default function CardManga({title, category, photo, id, navigation}) {
         case 'shonen':
             catColor= '#EF8481'
             break
-        case 'seinen':
-            catColor= '#EF8481'
-            break
         case 'shojo':
             catColor= '#00BA88'
             break

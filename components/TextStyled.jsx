@@ -37,6 +37,7 @@ export default function TextStyled({ props, content }) {
             color: props.color,
             textAlign: props.textAlign,
             textShadowRadius: props.textShadowRadius,
+            textShadowColor: props.textShadowColor,
             shadowOpacity: props.shadowOpacity,
             opacity: props.opacity,
             marginBottom: props.marginBottom,

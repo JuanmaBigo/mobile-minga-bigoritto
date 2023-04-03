@@ -8,7 +8,6 @@ import {REACT_APP_URL} from '@env'
 const read_mangas = createAsyncThunk(
     'read_mangas',
     async ({ inputText, inputPage }) => {
-        
         AsyncStorage.getItem('token')
             .then(res => {
                 token = res;
@@ -31,9 +30,12 @@ const read_mangas = createAsyncThunk(
 const read_manga = createAsyncThunk(
     'read_manga',
     async ({ id }) => {
-        let token = localStorage.getItem('token')
+        AsyncStorage.getItem('token')
+        .then(res => {
+            token = res;
+        })
         let headers = { headers: { 'Authorization': `Bearer ${token}` } }
-        let url = apiUrl + 'mangas/' + id;
+        let url = REACT_APP_URL + 'mangas/' + id;
         try {
             let response = await axios.get(url, headers)
             return {
@@ -50,16 +52,18 @@ const read_manga = createAsyncThunk(
 const read_chapters = createAsyncThunk(
     'read_chapters',
     async ({ id, page, limit }) => {
-        let token = localStorage.getItem('token')
+        AsyncStorage.getItem('token')
+        .then(res => {
+            token = res;
+        })
         let headers = { headers: { 'Authorization': `Bearer ${token}` } }
         let url = ''
         if (page) {
-            url = apiUrl + 'chapters?' + 'manga_id=' + id + '&page=' + page;
+            url = REACT_APP_URL + 'chapters?' + 'manga_id=' + id + '&page=' + page;
         }
         if (limit === 0) {
-            url = apiUrl + 'chapters?' + 'manga_id=' + id + '&limit=' + limit;
+            url = REACT_APP_URL + 'chapters?' + 'manga_id=' + id + '&limit=' + limit;
         }
-
         try {
             let response = await axios.get(url, headers)
             return {
